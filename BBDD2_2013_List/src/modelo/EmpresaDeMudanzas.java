@@ -19,6 +19,8 @@ import java.util.Collection;
  */
 public class EmpresaDeMudanzas {
 
+	private int idEmpresaDeMudanzas;
+	
 	/**
 	 * CUIT de la empresa.
 	 */
@@ -78,6 +80,20 @@ public class EmpresaDeMudanzas {
 	  this.setPendientes(mudanzasPendientes);
 	  this.setEmpleados(empleados);
 	  this.setGerente(gerente);
+	}
+	
+	/**
+	 * @return the idEmpresaDeMudanzas
+	 */
+	public int getIdEmpresaDeMudanzas() {
+		return idEmpresaDeMudanzas;
+	}
+
+	/**
+	 * @param idEmpresaDeMudanzas the idEmpresaDeMudanzas to set
+	 */
+	public void setIdEmpresaDeMudanzas(int idEmpresaDeMudanzas) {
+		this.idEmpresaDeMudanzas = idEmpresaDeMudanzas;
 	}
 
 	/**

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-
+//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate
+-mapping-3.0.dtd">
+<hibernate-mapping package="modelo">
+	<class name="Mudanza" table="MUDANZA">
+		<id name"idMudanza" column="ID_MUDANZA">
+			<generator class="native"/>
+		</id>
+		<property name="domicilio" type="string" />
+		<property name="fecha" type="date" />
+		<property name="valor" type="float" />
+		<property name="horas" type="time" />
+		<property name="finalizada" type="boolean" />
+		<many-to-one class="EmpresaDeMudanza" column="ID_EMPRESA_MUDANZA" not-null="true" cascade="all" />
+	</class>
+</hibernate-mapping>

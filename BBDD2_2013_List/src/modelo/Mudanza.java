@@ -18,6 +18,7 @@ import java.util.Collection;
  */
 public class Mudanza {
 	
+	private int idMudanza;
 	/**
 	 * Indica si la mudanza fue finalizada.
 	 */
@@ -121,6 +122,24 @@ public class Mudanza {
 	    }
 	    return transportes;
 	  }
+	
+	/**
+	 * Getter 
+	 * 
+	 * @return int idMudanza
+	 */
+	public int getIdMudanza() {
+		return idMudanza;
+	}
+	
+	/**
+	 * Setter
+	 * 
+	 * @param idMudanza
+	 */
+	public void setIdMudanza(int idMudanza) {
+		this.idMudanza = idMudanza;
+	}
 
 	/**
 	 * Getter.
