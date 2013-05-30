@@ -8,7 +8,7 @@
 
 <hibernate-mapping package="modelo">
 	<class name="EmpresaDeMudanzas" table="EMPRESA_DE_MUDANZAS">
-		<id name"idEmpresaDeMudanzas" column="ID_EMPRESA_DE_MUDANZAS">
+		<id name"id" column="ID_EMPRESA_DE_MUDANZAS">
 			<generator class="native"/>
 		</id>
 		<property name="cuit" type="string" />

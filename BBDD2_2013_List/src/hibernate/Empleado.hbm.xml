@@ -5,7 +5,7 @@
 -mapping-3.0.dtd">
 <hibernate-mapping package="modelo">
 	<class name="Empleado" table="EMPLEADO">
-		<id name"idEmpleado" column="ID_EMPLEADO">
+		<id name="id" column="ID_EMPLEADO">
 			<generator class="native"/>
 		</id>
 		<property name="nombreCompeto" type="string"/>
