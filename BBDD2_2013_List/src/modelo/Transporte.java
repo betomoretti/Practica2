@@ -14,6 +14,8 @@ package modelo;
  */
 public abstract class Transporte {
 
+	private int id;
+
 	/**
 	 * Peso maximo que tolera el transporte.
 	 */
@@ -25,6 +27,14 @@ public abstract class Transporte {
 	private String patente;
 	private String tipoTransporte;
 
+	/*
+	 * Retorna el id
+	*/
+	 
+	public int getId() {
+		return id;
+	}
+	
 	/**
 	 * Retorna el peso maximo que tolera el transporte.
 	 * 

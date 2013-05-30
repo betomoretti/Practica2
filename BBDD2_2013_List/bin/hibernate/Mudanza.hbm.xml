@@ -13,7 +13,7 @@
 		<property name="valor" type="float" />
 		<property name="horas" type="time" />
 		<property name="finalizada" type="boolean" />
-		<many-to-one class="EmpresaDeMudanza" column="ID_EMPRESA_MUDANZA" not-null="true" cascade="all" />
+		<many-to-one name="empresaDeMudanza" column="ID_EMPRESA_MUDANZA" not-null="true" cascade="all" />
 		<list name="empleados" table="MUDANZA_ROLEMPLEADO" cascade="all">
 			<key column="ID_MUDANZA"/>
 			<many-to-many column="ID_ROLEMPLEADO" class="RolEmpleado"/>		

@@ -13,15 +13,20 @@
 		</id>
 		<property name="cuit" type="string" />
 		<property name="razonSocial" type="string" />
-		<list name="pendientes" cascade="all">
-	         <key column="ID_MUDANZA"/>
+		<list name="realizadas" cascade="all">
+	         <key column="ID_EMPRESADEMUDANZAS"/>
 	         <list-index column="idx"/>
 	         <many-to-one class="Mudanza"/>
       	</list>
       	<list name="pendientes" cascade="all">
-	         <key column="ID_MUDANZA"/>
+	         <key column="ID_EMPRESADEMUDANZAS"/>
 	         <list-index column="idx"/>
 	         <many-to-one class="Mudanza"/>
       	</list>
+      	<list name="transportes" cascade="all">
+			<key column="ID_EMPRESADEMUDANZAS" />
+			<list-index column="idx"/>
+			<one-to-many class="Transporte" />
+		</list>
 	</class>
 </hibernate-mapping>

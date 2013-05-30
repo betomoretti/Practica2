@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-
+//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate
+-mapping-3.0.dtd">
+
+<hibernate-mapping package="modelo">
+	<class name="Transporte" table="TRANSPORTE">
+		<id name="id" column="ID_TRANSPORTE">
+			<generator class="native"/>
+		</id>
+		<property name="pesoMaximo" type="int" />
+		<property name="patente" type="string" />
+		<property name="tipoTransporte" type="string" />
+
+	</class>
+</hibernate-mapping>

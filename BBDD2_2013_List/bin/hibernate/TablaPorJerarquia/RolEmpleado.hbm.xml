@@ -9,6 +9,7 @@
 			<generator class="native"/>
 		</id>
 		<property name="nombreRol" type="string" />
-		<many-to-one name="Empleado" column="ID_EMPLEADO" not-null="true" cascade="all"/>
+		<many-to-one name="empleado" column="ID_EMPLEADO" not-null="true" cascade="all"/>
+		<many-to-one name="transporte" column="ID_TRANSPORTE" not-null="false" cascade="all"/>
 	</class>
 </hibernate-mapping>
