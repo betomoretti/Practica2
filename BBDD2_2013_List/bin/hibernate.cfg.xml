@@ -6,10 +6,25 @@
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/BBDD2_2013_LIST</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/bbdd2_1_List_J</property>
+		<!-- <property name="connection.url">jdbc:mysql://localhost:3306/bbdd2_1_List_C</property> -->
 		<property name="show_sql">true</property>
 		
 		<mapping resource="hibernate/Mudanza.hbm.xml" />
+		<mapping resource="hibernate/EmprezaDeMudanza.hbm.xml" />		
+		<mapping resource="hibernate/Empleado.hbm.xml" />
+		<mapping resource="hibernate/TablaPorJerarquia/RolEmpleado.hbm.xml" />
+		<mapping resource="hibernate/TablaPorJerarquia/Transporte.hbm.xml" />
+		
+		
+	<!--
+		<mapping resource="hibernate/TablaPorSubclase/RolEmpleado.hbm.xml" />
+		<mapping resource="hibernate/TablaPorSubclase/Transporte.hbm.xml" />
+		<mapping resource="hibernate/TablaPorSubclase/Ayudante.hbm.xml" />
+		<mapping resource="hibernate/TablaPorSubclase/Camion.hbm.xml" />
+		<mapping resource="hibernate/TablaPorSubclase/Camioneta.hbm.xml" />
+		<mapping resource="hibernate/TablaPorSubclase/Conductor.hbm.xml" />		
+	-->	
 		
 	</session-factory>
 </hibernate-configuration>
