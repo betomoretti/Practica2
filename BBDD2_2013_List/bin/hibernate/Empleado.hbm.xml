@@ -11,5 +11,7 @@
 		<property name="nombreCompeto" type="string"/>
 		<property name="cuil" type="string"/>
 		<property name="fechaNaciemiento" type="date"/>		
+		<many-to-one name="jefe" column="ID_EMPLEADO" not-null="true" cascade="all"/>
+		
 	</class>
 </hibernate-mapping>

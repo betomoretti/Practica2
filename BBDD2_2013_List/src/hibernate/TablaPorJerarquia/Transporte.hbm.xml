@@ -9,6 +9,13 @@
 		<id name="id" column="ID_TRANSPORTE">
 			<generator class="native"/>
 		</id>
+		<discriminator column="TIPO_TRANSPORTE" type="string"/>
+		<subclass name="Camion" discriminator-value="CAMION">
+		
+		</subclass>
+		<subclass name="Camioneta" discriminator-value="CAMIONETA">
+
+		</subclass>
 		<property name="pesoMaximo" type="int" />
 		<property name="patente" type="string" />
 		<property name="tipoTransporte" type="string" />

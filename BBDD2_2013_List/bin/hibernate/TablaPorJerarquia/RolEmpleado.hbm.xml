@@ -8,8 +8,16 @@
 		<id name="id" column="ID_ROLEMPLEADO">
 			<generator class="native"/>
 		</id>
+		<discriminator column="TIPO_ROL" type="string"/>
 		<property name="nombreRol" type="string" />
+		<subclass name="Ayudante" discriminator-value="A">
+		
+		</subclass>
+		<subclass name="Conductor" discriminator-value="C">
+			<many-to-one name="transporte" column="ID_TRANSPORTE" not-null="false" cascade="all"/>
+		</subclass>
 		<many-to-one name="empleado" column="ID_EMPLEADO" not-null="true" cascade="all"/>
-		<many-to-one name="transporte" column="ID_TRANSPORTE" not-null="false" cascade="all"/>
+		
+		
 	</class>
 </hibernate-mapping>
