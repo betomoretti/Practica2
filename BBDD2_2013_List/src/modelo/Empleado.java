@@ -17,6 +17,8 @@ import java.util.Date;
  * 
  */
 public class Empleado {
+	
+	private int id;
 
 	/**
 	 * El nombre completo del empleado.
@@ -37,8 +39,16 @@ public class Empleado {
 	 * Jefe del empleado en la empresa.
 	 */
 	private Empleado jefe;
-
+	
 	public Empleado() {};
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	/**
 	 * Constructor.
