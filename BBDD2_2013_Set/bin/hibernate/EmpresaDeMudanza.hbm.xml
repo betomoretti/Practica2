@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-
+//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="modelo">
+	<class name="EmpresaDeMudanzas" table="EMPRESADEMUDANZAS">
+		<id name="id" column="ID_EMPRESADEMUDANZA">
+			<generator class="native"/>
+		</id>
+		<property name="cuit" type="string" />
+		<property name="razonSocial" type="string" />
+		<many-to-one name="gerente" column="ID_EMPLEADO" unique="true" not-null="true" cascade="all"> </many-to-one>
+		<set name="realizadas" cascade="all">
+	         <key column="ID_EMPRESADEMUDANZAS"/>
+	         <one-to-many class="Mudanza"/>
+      	</set>
+      	<set name="pendientes" cascade="all">
+	         <key column="ID_EMPRESADEMUDANZAS"/>
+	         <one-to-many class="Mudanza" />
+      	</set>
+      	<set name="transportes" cascade="all">
+			<key column="ID_EMPRESADEMUDANZAS" />
+			<one-to-many class="Transporte" />
+		</set>
+		<set name="empleados" cascade="all">
+			<key column="ID_EMPRESADEMUDANZAS" />
+			<one-to-many class="Empleado" />
+		</set>
+	</class>
+</hibernate-mapping>
