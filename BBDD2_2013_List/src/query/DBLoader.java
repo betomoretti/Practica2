@@ -31,7 +31,7 @@ public class DBLoader {
 
 	public static void main(String[] args) {
 		try {
-			System.out.println("----------------------- Setting up Hibernate -----------------------");
+				
 			Configuration cfg = new Configuration();
 			cfg.configure();
 
