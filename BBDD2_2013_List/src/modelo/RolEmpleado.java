@@ -124,9 +124,14 @@ public abstract class RolEmpleado {
 	protected void setNombreRol(String nombreRol) {
 		this.nombreRol = nombreRol;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 
 }

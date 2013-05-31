@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-
 //Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate
--mapping-3.0.dtd">
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="modelo">
 	<class name="Mudanza" table="MUDANZA">
 		<id name="id" column="ID_MUDANZA">
 			<generator class="native"/>
 		</id>
+		<property name="finalizada" type="boolean" />
 		<property name="domicilio" type="string" />
 		<property name="fecha" type="date" />
-		<property name="valor" type="float" />
-		<property name="horas" type="time" />
-		<property name="finalizada" type="boolean" />
-		<many-to-one name="empresaDeMudanza" column="ID_EMPRESAMUDANZA" not-null="true" cascade="all" />
+		<property name="valor" type="integer" />
+		<property name="horas" type="integer" />
+
 		<list name="empleados" table="MUDANZA_ROLEMPLEADO" cascade="all">
 			<key column="ID_MUDANZA"/>
+			<list-index column="idx"/>
 			<many-to-many column="ID_ROLEMPLEADO" class="RolEmpleado"/>		
 		</list>
 	</class>

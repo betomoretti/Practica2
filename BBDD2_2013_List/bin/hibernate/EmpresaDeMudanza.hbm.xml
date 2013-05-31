@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-
 //Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate
--mapping-3.0.dtd">
-
-
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="modelo">
 	<class name="EmpresaDeMudanzas" table="EMPRESADEMUDANZAS">
-		<id name"id" column="ID_EMPRESADEMUDANZA">
+		<id name="id" column="ID_EMPRESADEMUDANZA">
 			<generator class="native"/>
 		</id>
 		<property name="cuit" type="string" />
 		<property name="razonSocial" type="string" />
+		<many-to-one name="gerente" column="ID_EMPLEADO" unique="true" not-null="true" cascade="all"> </many-to-one>
 		<list name="realizadas" cascade="all">
 	         <key column="ID_EMPRESADEMUDANZAS"/>
 	         <list-index column="idx"/>
-	         <many-to-one class="Mudanza"/>
+	         <one-to-many class="Mudanza"/>
       	</list>
       	<list name="pendientes" cascade="all">
 	         <key column="ID_EMPRESADEMUDANZAS"/>
 	         <list-index column="idx"/>
-	         <many-to-one class="Mudanza"/>
+	         <one-to-many class="Mudanza" />
       	</list>
       	<list name="transportes" cascade="all">
 			<key column="ID_EMPRESADEMUDANZAS" />
@@ -33,6 +31,5 @@
 			<list-index column="idx"/>
 			<one-to-many class="Empleado" />
 		</list>
-		<many-to-one name="gerente" column="ID_EMPLEADO" unique="true" not-null="true" cascade="all"> </one-to-one>
 	</class>
 </hibernate-mapping>

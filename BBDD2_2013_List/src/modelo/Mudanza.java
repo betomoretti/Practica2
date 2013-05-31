@@ -18,7 +18,7 @@ import java.util.Collection;
  */
 public class Mudanza {
 	
-	private int idMudanza;
+	private int id;
 	/**
 	 * Indica si la mudanza fue finalizada.
 	 */
@@ -128,8 +128,8 @@ public class Mudanza {
 	 * 
 	 * @return int idMudanza
 	 */
-	public int getIdMudanza() {
-		return idMudanza;
+	public int getId() {
+		return id;
 	}
 	
 	/**
@@ -137,8 +137,8 @@ public class Mudanza {
 	 * 
 	 * @param idMudanza
 	 */
-	public void setIdMudanza(int idMudanza) {
-		this.idMudanza = idMudanza;
+	public void setId(int idMudanza) {
+		this.id = idMudanza;
 	}
 
 	/**

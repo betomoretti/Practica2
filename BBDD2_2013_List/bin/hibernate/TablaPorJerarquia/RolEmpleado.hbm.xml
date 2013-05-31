@@ -1,23 +1,25 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-
 //Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate
--mapping-3.0.dtd">
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping package="modelo">
-	<class name="RolEmpleado" table="ROLEMPLEADO">
+
+	<class name="RolEmpleado" table="ROLEMPLEADO" discriminator-value="ROLEMPLEADO">
+
 		<id name="id" column="ID_ROLEMPLEADO">
 			<generator class="native"/>
 		</id>
-		<discriminator column="TIPO_ROL" type="string"/>
+		
+		<discriminator column="ROLEMPLEADO_TYPE" type="string"/>
+		
 		<property name="nombreRol" type="string" />
-		<subclass name="Ayudante" discriminator-value="A">
+		<many-to-one name="empleado" column="ID_EMPLEADO" not-null="true" cascade="all" />
 		
+		<subclass name="Ayudante" discriminator-value="Ayudante"> </subclass>
+		<subclass name="Conductor" discriminator-value="Conductor">
+			<many-to-one name="transporte" column="ID_TRANSPORTE" not-null="false" cascade="all" /> 
 		</subclass>
-		<subclass name="Conductor" discriminator-value="C">
-			<many-to-one name="transporte" column="ID_TRANSPORTE" not-null="false" cascade="all"/>
-		</subclass>
-		<many-to-one name="empleado" column="ID_EMPLEADO" not-null="true" cascade="all"/>
-		
 		
 	</class>
 </hibernate-mapping>

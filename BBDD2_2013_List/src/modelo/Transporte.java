@@ -26,14 +26,7 @@ public abstract class Transporte {
 	 */
 	private String patente;
 	private String tipoTransporte;
-
-	/*
-	 * Retorna el id
-	*/
 	 
-	public int getId() {
-		return id;
-	}
 	
 	/**
 	 * Retorna el peso maximo que tolera el transporte.
@@ -86,5 +79,13 @@ public abstract class Transporte {
 	
 	public void setTipoTransporte(String tipoTransporte) {
 		this.tipoTransporte = tipoTransporte;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

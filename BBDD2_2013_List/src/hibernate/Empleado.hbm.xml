@@ -1,17 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-
 //Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate
--mapping-3.0.dtd">
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="modelo">
 	<class name="Empleado" table="EMPLEADO">
 		<id name="id" column="ID_EMPLEADO">
 			<generator class="native"/>
 		</id>
-		<property name="nombreCompeto" type="string"/>
+		<property name="nombreCompleto" type="string"/>
+		<property name="fechaNacimiento" type="date"/>		
 		<property name="cuil" type="string"/>
-		<property name="fechaNaciemiento" type="date"/>		
-		<many-to-one name="jefe" column="ID_EMPLEADO" not-null="true" cascade="all"/>
+		<many-to-one name="jefe" column="ID_JEFE" not-null="false" cascade="all"/>
 		
 	</class>
 </hibernate-mapping>

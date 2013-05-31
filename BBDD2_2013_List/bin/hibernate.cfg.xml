@@ -11,7 +11,7 @@
 		<property name="show_sql">true</property>
 		
 		<mapping resource="hibernate/Mudanza.hbm.xml" />
-		<mapping resource="hibernate/EmprezaDeMudanza.hbm.xml" />		
+		<mapping resource="hibernate/EmpresaDeMudanza.hbm.xml" />		
 		<mapping resource="hibernate/Empleado.hbm.xml" />
 		<mapping resource="hibernate/TablaPorJerarquia/RolEmpleado.hbm.xml" />
 		<mapping resource="hibernate/TablaPorJerarquia/Transporte.hbm.xml" />

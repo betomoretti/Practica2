@@ -42,9 +42,6 @@ public class Empleado {
 	
 	public Empleado() {};
 	
-	public int getId() {
-		return id;
-	}
 
 
 	
@@ -144,5 +141,19 @@ public class Empleado {
 
 	private void setJefe(Empleado jefe) {
 		this.jefe = jefe;
+	}
+
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

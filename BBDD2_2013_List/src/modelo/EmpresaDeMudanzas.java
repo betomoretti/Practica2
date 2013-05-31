@@ -19,7 +19,7 @@ import java.util.Collection;
  */
 public class EmpresaDeMudanzas {
 
-	private int idEmpresaDeMudanzas;
+	private int id;
 	
 	/**
 	 * CUIT de la empresa.
@@ -85,15 +85,15 @@ public class EmpresaDeMudanzas {
 	/**
 	 * @return the idEmpresaDeMudanzas
 	 */
-	public int getIdEmpresaDeMudanzas() {
-		return idEmpresaDeMudanzas;
+	public int getId() {
+		return id;
 	}
 
 	/**
 	 * @param idEmpresaDeMudanzas the idEmpresaDeMudanzas to set
 	 */
-	public void setIdEmpresaDeMudanzas(int idEmpresaDeMudanzas) {
-		this.idEmpresaDeMudanzas = idEmpresaDeMudanzas;
+	public void setId(int idEmpresaDeMudanzas) {
+		this.id = idEmpresaDeMudanzas;
 	}
 
 	/**
