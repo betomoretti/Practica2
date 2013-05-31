@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="modelo">
+	<class name="Transporte" table="TRANSPORTE">
+		<id name="id" column="ID_TRANSPORTE">
+			<generator class="native"/>
+		</id>
+		<property name="pesoMaximo" type="integer" />
+		<property name="patente" type="string" />
+		<property name="tipoTransporte" type="string" />
+
+		<joined-subclass name="Camion" table="CAMION">
+			<key column="ID_TRANSPORTE" />
+		</joined-subclass>		
+
+		<joined-subclass name="Camioneta" table="CAMIONETA">
+			<key column="ID_TRANSPORTE" />
+		</joined-subclass>	
+	</class>
+</hibernate-mapping>
