@@ -13,7 +13,15 @@ package modelo;
  * @author Catedra de BBDD2 bbdd2_2012@gruposyahoo.com.ar
  */
 public abstract class Transporte {
+	
+	private int id;
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 	/**
 	 * Peso maximo que tolera el transporte.
 	 */

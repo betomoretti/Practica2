@@ -18,6 +18,14 @@ import java.util.Collection;
  */
 public class Mudanza {
 	
+	private int id;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	/**
 	 * Indica si la mudanza fue finalizada.
 	 */

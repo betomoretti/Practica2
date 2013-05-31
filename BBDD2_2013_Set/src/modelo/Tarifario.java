@@ -14,6 +14,14 @@ package modelo;
  */
 public class Tarifario {
 	
+	private int id;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	/**
 	 * La unica instancia del tarifario. Es un singleton.
 	 */

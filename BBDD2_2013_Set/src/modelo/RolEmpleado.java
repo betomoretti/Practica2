@@ -16,7 +16,15 @@ import java.util.Date;
  * @author Catedra de BBDD2 bbdd2_2012@gruposyahoo.com.ar
  */
 public abstract class RolEmpleado {
+	
+	private int id;
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 	/**
 	 * Empleado sobre el cual se construye el rol.
 	 */

@@ -18,7 +18,15 @@ import java.util.Collection;
  * 
  */
 public class EmpresaDeMudanzas {
+	
+	private int id;
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 	/**
 	 * CUIT de la empresa.
 	 */
