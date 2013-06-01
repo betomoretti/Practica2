@@ -26,6 +26,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import com.sun.org.apache.xpath.internal.functions.FuncBoolean;
+
 public class DBabm {
 
 	private static SessionFactory sessions;
@@ -38,10 +40,48 @@ public class DBabm {
 		Configuration cfg = new Configuration();
 		cfg.configure();
 		//ejecutarEjercicio3A(cfg);
-		ejecutarEjercicio3B(cfg);
+		//ejecutarEjercicio3B(cfg);
+		ejecutarEjercicio3C(cfg);
+
 		System.out.println("----------------------- Done. -----------------------");
 		
 	}
+	public static void ejecutarEjercicio3C(Configuration cfg) {
+		System.out.println("Eliminar la mudanza del inciso a");
+
+		long elapsedTime = 0;
+		sessions = cfg.buildSessionFactory();
+		Session session = sessions.openSession();
+		Transaction tx = null;
+		try {
+			String dir = "xxx";
+			DateFormat dfm = new SimpleDateFormat("yyyy-MM-dd");
+			Date fecha = dfm.parse("2012-08-04");
+			tx = session.beginTransaction();
+			long start = System.nanoTime(); 
+			Query query = session.createQuery("from modelo.Mudanza m where m.domicilio = ? and m.fecha = ?").setParameter(0, dir).setParameter(1, fecha);
+			System.out.println("Ejecuta el query");
+			Mudanza mudanza = (Mudanza) query.uniqueResult();
+			
+			EmpresaDeMudanzas empresa = (EmpresaDeMudanzas) session.createQuery("from modelo.EmpresaDeMudanzas em").uniqueResult();
+			System.out.println("Quita la mudanza de la empresa");
+			empresa.getPendientes().remove(mudanza);
+			System.out.println("Persiste los datos");
+			session.update(empresa);
+			tx.commit();
+			elapsedTime = System.nanoTime() - start;
+			System.out.println(elapsedTime);
+
+		} catch (Exception e) {
+			if (tx != null) {
+				tx.rollback();
+			}
+			e.printStackTrace();
+			elapsedTime = -1;
+		}
+	}
+	
+	
 	
 	public static void ejecutarEjercicio3B(Configuration cfg) {
 		System.out.println("Obtener la mudanza creada en el ejercicio 3a y eliminar el conductor");
