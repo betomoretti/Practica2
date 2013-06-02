@@ -39,15 +39,17 @@ public class DBabm {
 		System.out.println("----------------------- Setting up Hibernate -----------------------");
 		Configuration cfg = new Configuration();
 		cfg.configure();
-		//ejecutarEjercicio3A(cfg);
-		//ejecutarEjercicio3B(cfg);
+		ejecutarEjercicio3A(cfg);
+		ejecutarEjercicio3B(cfg);
 		ejecutarEjercicio3C(cfg);
 
 		System.out.println("----------------------- Done. -----------------------");
 		
 	}
 	public static void ejecutarEjercicio3C(Configuration cfg) {
+		System.out.println("----------------------------------------------");
 		System.out.println("Eliminar la mudanza del inciso a");
+		System.out.println("----------------------------------------------");
 
 		long elapsedTime = 0;
 		sessions = cfg.buildSessionFactory();
@@ -70,6 +72,7 @@ public class DBabm {
 			session.update(empresa);
 			tx.commit();
 			elapsedTime = System.nanoTime() - start;
+			System.out.println("--------------------- El tiempo insumido es: -------------------------");
 			System.out.println(elapsedTime);
 
 		} catch (Exception e) {
@@ -84,7 +87,9 @@ public class DBabm {
 	
 	
 	public static void ejecutarEjercicio3B(Configuration cfg) {
+		System.out.println("----------------------------------------------");
 		System.out.println("Obtener la mudanza creada en el ejercicio 3a y eliminar el conductor");
+		System.out.println("----------------------------------------------");
 		
 		long elapsedTime = 0;
 		sessions = cfg.buildSessionFactory();
@@ -123,6 +128,7 @@ public class DBabm {
 			session.update(mudanza);
 			tx.commit();
 			elapsedTime = System.nanoTime() - start;
+			System.out.println("--------------------- El tiempo insumido es: -------------------------");
 			System.out.println(elapsedTime);
 		} catch (Exception e) {
 			if (tx != null) {
@@ -135,13 +141,16 @@ public class DBabm {
 	}
 	
 	
-	public static EmpresaDeMudanzas ejecutarEjercicio3A(Configuration cfg) throws ParseException  {
+	public static void ejecutarEjercicio3A(Configuration cfg) throws ParseException  {
+		System.out.println("----------------------------------------------");
 		System.out.println("Persistir una mudanza de 6 horas para el dia 4 de agosto de 2012 con 2 ayudantes:");
 		System.out.println("Federico Lopez, nacido el 9/2/1980");
 		System.out.println("Daniel Estevez, nacido el 4/12/1975,");
 		System.out.println("Y un conductor");
 		System.out.println("Alberto Sanchez, nacido el 5/3/1970, conduciendo un camion patente ERS390 con");
 		System.out.println("soporte para 4500 kilos.");
+		System.out.println("----------------------------------------------");
+
 		System.out.println();
 		
 		System.out.println("----------------------- Creacion de los objetos. -----------------------");
@@ -198,14 +207,10 @@ public class DBabm {
 			session.flush();
 			tx.commit();
 			long elapsedTime = System.nanoTime() - start;   //Calculo de la duraccion en nanosegundos
-			
+			System.out.println("--------------------- El tiempo insumido es: -------------------------");
 			System.out.println(elapsedTime);
-
-			return emp;
 		} catch (HibernateException e) {
 			e.printStackTrace();
-		}
-		
-		return emp;				
+		}			
 	}	
 }
